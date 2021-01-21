@@ -7,9 +7,9 @@
 		"4" : "Leaderboard"
 	},
 	"difficulty" : {
-		"easy" : [],
-		"medium" : [],
-		"hard" : []
+		"easy" : ["100", "5"],
+		"medium" : ["50", "10"],
+		"hard" : ["20", "30"]
 	}
 
 

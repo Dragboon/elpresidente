@@ -1,34 +1,26 @@
 package fr.esgi.homepage;
 
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.google.gson.Gson;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
 public class Homepage {
 
     public void menu() {
 
-        JSONParser parser = new JSONParser();
+        Gson gson = new Gson();
 
-        try (FileReader reader = new FileReader(System.getProperty("user.dir") + "\\data\\homepage.json")) {
+        try (Reader reader = new FileReader(System.getProperty("user.dir") + "\\data\\homepage.json")) {
 
-            Object data = parser.parse(reader);
-            JSONArray fileData = (JSONArray) data;
+            JsonConfig string = gson.fromJson(reader, JsonConfig.class);
+            System.out.println(string.homepage.get("title"));
+            System.out.println(string.difficulty.get("easy"));
 
-            System.out.println(fileData);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
         }
-
-
     }
 
 }
