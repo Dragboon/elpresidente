@@ -1,9 +1,8 @@
-package fr.esgi.homepage;
+package fr.esgi.config;
 
-import java.lang.reflect.Array;
 import java.util.Map;
 
-public class JsonConfig {
+public class HomepageConfig {
     public Map<String, String> homepage;
     public Map<String, Double[]> difficulty;
 }
