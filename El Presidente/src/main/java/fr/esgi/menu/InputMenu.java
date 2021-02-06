@@ -13,7 +13,7 @@ public class InputMenu {
                 System.out.println(String.format("%d - %s", i + 1, choices[i]));
             }
 
-            System.out.print("\nVotre choix : ");
+            System.out.print("\nYour choice : ");
 
             try {
                 choice = scanner.nextInt();
@@ -23,7 +23,7 @@ public class InputMenu {
 
             if (choice < 1 || choice > choices.length) {
                 choice = 0;
-                System.out.println(String.format("Merci de choisir une option entre 1 et %d.", choices.length));
+                System.out.println(String.format("Please, choose an option between 1 and %d.", choices.length));
             }
         }
 
