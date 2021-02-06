@@ -1,0 +1,17 @@
+{
+	"title" : {
+		"name" : "El Presidente!"
+	},
+	"homepage" : {
+		"1" : "Play",
+		"2" : "Difficulty",
+		"3" : "Sandbox",
+		"4" : "Leaderboard",
+		"5" : "Quit"
+	},
+	"difficulty" : {
+		"easy" : ["100", "5"],
+		"medium" : ["50", "10"],
+		"hard" : ["20", "30"]
+	}
+}
