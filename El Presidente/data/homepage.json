@@ -1,11 +1,13 @@
 {
+	"title" : {
+		"name" : "El Presidente!"
+	},
 	"homepage" : {
-		"title" : "El Presidente!",
-		"1" : "1. Play",
-		"2" : "2. Difficulty",
-		"3" : "3. Sandbox",
-		"4" : "4. Leaderboard",
-		"5" : "5. Quit"
+		"1" : "Play",
+		"2" : "Difficulty",
+		"3" : "Sandbox",
+		"4" : "Leaderboard",
+		"5" : "Quit"
 	},
 	"difficulty" : {
 		"easy" : ["100", "5"],
