@@ -1,0 +1,5 @@
+fr\esgi\config\HomepageConfig.class
+fr\esgi\menu\InputMenu.class
+fr\esgi\config\ErrorsHandler.class
+fr\esgi\main\Main.class
+fr\esgi\menu\Homepage.class
