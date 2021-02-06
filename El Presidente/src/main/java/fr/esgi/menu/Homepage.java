@@ -3,6 +3,7 @@ package fr.esgi.menu;
 import com.google.gson.Gson;
 import fr.esgi.config.ErrorsHandler;
 import fr.esgi.config.HomepageConfig;
+import fr.esgi.exceptions.GameOutputNotFound;
 import fr.esgi.exceptions.SeasonDisplayNotFound;
 import fr.esgi.exceptions.SeasonFileException;
 import fr.esgi.game.Play;
@@ -54,7 +55,7 @@ public class Homepage extends InputMenu {
                     // leaderboard
                     break;
             }
-        } catch (SeasonFileException | SeasonDisplayNotFound e) {
+        } catch (SeasonFileException | SeasonDisplayNotFound | GameOutputNotFound e) {
             System.out.println(e.getMessage());
         }
 

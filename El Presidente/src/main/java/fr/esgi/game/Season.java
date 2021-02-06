@@ -17,7 +17,7 @@ public class Season {
         seasons = seasonsReader.getSeasons();
         String seasonDisplay;
 
-        System.out.println("Année " + (int) (round / 4) + " - " + seasons.print("base", round % 4));
+        System.out.println("Year " + (int) (round / 4) + " - " + seasons.print("base", round % 4));
         if (!event.equals("base")) {
             seasonDisplay = seasons.print(event, round % 4);
             if (seasonDisplay != null) {
