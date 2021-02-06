@@ -1,4 +1,9 @@
 {
   "newYearScore" : "You past a year, actual score : ",
-  "a" : "b"
+  "yearlyHarvest" : "Your island generated food units : ",
+  "yearlyTaxes" : "Your island generated money : ",
+  "food" : "Current food : ",
+  "money" : "Current money : ",
+  "islandIndus" : "Island's industries part : ",
+  "islandFarm" : "Island's farms part : "
 }

@@ -11,12 +11,16 @@ import java.util.Scanner;
 
 public class Play {
 
-    int nbRounds;
-    int nbYears = 0;
-    Season season = new Season();
-    Score playerScore = new Score("Lolitler");
-    GameOutputReader gameOutputReader = new GameOutputReader();
-    GameOutputConfig gameOutputConfig;
+    private int nbRounds;
+    private int nbYears = 0;
+    private int food;
+    private int money;
+
+    private Season season = new Season();
+    private Island island = new Island();
+    private Score playerScore = new Score("Lolitler");
+    private GameOutputReader gameOutputReader = new GameOutputReader();
+    private GameOutputConfig gameOutputConfig;
 
 
     public void startGame(Scanner scanner) throws SeasonFileException, SeasonDisplayNotFound, GameOutputNotFound {
@@ -27,15 +31,13 @@ public class Play {
             throw new GameOutputNotFound("Game output file not found.");
         }
 
-        while(nbYears != 1) {
+        while(nbYears != 2) {
 
-            if (nbRounds % 4 == 0 && nbRounds != 0) {
-                nbYears++;
-                System.out.println(gameOutputConfig.getNewYearScore() + playerScore.getScore());
-            }
+            yearlyEvent();
 
             try {
                 season.getSeason("firstyear",nbRounds);
+                printIslandStats();
             } catch (IOException e) {
                 throw new SeasonFileException("Season file not found.");
             } catch (SeasonDisplayNotFound e) {
@@ -48,6 +50,23 @@ public class Play {
         }
     }
 
+    private void yearlyEvent() {
 
+        if (nbRounds % 4 == 0 && nbRounds != 0) {
+            nbYears++;
+            food += island.yearlyHarvest();
+            money += island.yearlyTaxes();
+            System.out.println(gameOutputConfig.getNewYearScore() + playerScore.getScore());
+            System.out.println(gameOutputConfig.getYearlyHarvest() + island.yearlyHarvest());
+            System.out.println(gameOutputConfig.getYearlyTaxes() + island.yearlyTaxes() + "\n\n");
+        }
+    }
+
+    private void printIslandStats() {
+        System.out.println(gameOutputConfig.getFood() + food);
+        System.out.println(gameOutputConfig.getMoney() + money);
+        System.out.println(gameOutputConfig.getIslandIndus() + island.getIndusLevel());
+        System.out.println(gameOutputConfig.getIslandFarm() + island.getFarmLevel() + "\n\n");
+    }
 
 }
