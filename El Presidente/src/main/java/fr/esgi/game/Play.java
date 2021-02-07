@@ -4,6 +4,7 @@ import fr.esgi.config.GameOutputConfig;
 import fr.esgi.exceptions.GameOutputNotFound;
 import fr.esgi.exceptions.SeasonDisplayNotFound;
 import fr.esgi.exceptions.SeasonFileException;
+import fr.esgi.factions.Factions;
 import fr.esgi.readers.GameOutputReader;
 
 import java.io.IOException;
@@ -21,7 +22,8 @@ public class Play {
     private Score playerScore = new Score("Lolitler");
     private GameOutputReader gameOutputReader = new GameOutputReader();
     private GameOutputConfig gameOutputConfig;
-
+    private Factions factions = new Factions();
+    private YearlyEvents yearlyevents = new YearlyEvents();
 
     public void startGame(Scanner scanner) throws SeasonFileException, SeasonDisplayNotFound, GameOutputNotFound {
 
@@ -31,9 +33,9 @@ public class Play {
             throw new GameOutputNotFound("Game output file not found.");
         }
 
-        while(nbYears != 2) {
+        while(factions.globalPopulation() >= 0 && factions.globalSatisfaction() >= 30) {
 
-            yearlyEvent();
+            printYearlyEvent();
 
             try {
                 season.getSeason("firstyear",nbRounds);
@@ -50,7 +52,7 @@ public class Play {
         }
     }
 
-    private void yearlyEvent() {
+    private void printYearlyEvent() {
 
         if (nbRounds % 4 == 0 && nbRounds != 0) {
             nbYears++;

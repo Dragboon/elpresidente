@@ -12,8 +12,8 @@ public class Score {
         return score;
     }
 
-    public void setScore() {
-
+    public void setScore(int globalSatisfaction, int nbYear, int globalPopulation) {
+        score = globalSatisfaction * (100 + 10 * nbYear) + globalPopulation / 2;
     }
 
 }
