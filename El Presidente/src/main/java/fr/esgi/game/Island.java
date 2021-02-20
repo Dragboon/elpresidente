@@ -2,7 +2,7 @@ package fr.esgi.game;
 
 public class Island {
 
-    private int farmLevel = 30;
+    private int farmLevel = 10;
     private int indusLevel = 30;
 
     public int yearlyHarvest() {
