@@ -1,0 +1,38 @@
+{
+  "choices" : {
+    "1" : "Buy Food",
+    "2" : "Corrupt factions",
+    "3" : "Start a new year"
+  },
+  "marketFood" : {
+    "foodMissing" : "Food units needed : ",
+    "noFoodNeeded" : "You have enough food to feed your whole population.",
+    "foodBought" : "Food units bought : ",
+    "foodWanted" : "How many food units do you want ? (enter 0 to go back to menu)",
+    "actualFood" : "Your actual food units : ",
+    "actualMoney" : "Your actual money : ",
+    "notEnoughMoney" : "You don't have enough money.",
+    "foodPrice" : "Each food unit cost %d."
+  },
+  "factionsCorruption" : {
+    "globalSatisfaction" : "Overall factions devotion : ",
+    "populationSize" : "Population size : ",
+    "actualMoney" : "Your actual money : ",
+    "population" : "%-15s| Population | Satisfaction |",
+    "corruptPrice" : "Cost : 15 per partisan (you will gain 10% faction devotion).",
+    "warningCorruption" : "/!\\ you will lose 1.5 loyalist devotion points per partisan corrupted.",
+    "notEnoughMoney" : "You don't have enough money.",
+    "corruptionSuccess" : "You successfully corrupted ",
+    "factionChoice" : "Choose a faction to corrupt :",
+    "doneMenu" : "Done"
+  },
+  "factionsName" : {
+    "1" : "Capitalists",
+    "2" : "Communists",
+    "3" : "Liberals",
+    "4" : "Church",
+    "5" : "Militarists",
+    "6" : "Nationalists",
+    "7" : "Loyalists"
+  }
+}

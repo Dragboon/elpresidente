@@ -11,6 +11,9 @@ public class GameOutputConfig {
     private String money;
     private String islandIndus;
     private String islandFarm;
+    private String deathDisplay;
+    private String birthDisplay;
+    private Map<Integer, String> factionsName;
 
     public String getNewYearScore() {
         return newYearScore;
@@ -38,5 +41,17 @@ public class GameOutputConfig {
 
     public String getIslandFarm() {
         return islandFarm;
+    }
+
+    public String getDeathDisplay() {
+        return deathDisplay;
+    }
+
+    public String getBirthDisplay() {
+        return birthDisplay;
+    }
+
+    public String[] getFactionsName() {
+        return factionsName.values().toArray(new String[0]);
     }
 }
