@@ -5,5 +5,16 @@
   "food" : "Current food : ",
   "money" : "Current money : ",
   "islandIndus" : "Island's industries part : ",
-  "islandFarm" : "Island's farms part : "
+  "islandFarm" : "Island's farms part : ",
+  "deathDisplay" : "%-15s | R.I.P. | Total |",
+  "birthDisplay" : "%-15s | Births | Total |",
+  "factionsName" : {
+    "1" : "Capitalists",
+    "2" : "Communists",
+    "3" : "Liberals",
+    "4" : "Church",
+    "5" : "Militarists",
+    "6" : "Nationalists",
+    "7" : "Loyalists"
+  }
 }

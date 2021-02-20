@@ -18,7 +18,7 @@ public class InputMenu {
             try {
                 choice = scanner.nextInt();
             } catch (InputMismatchException e) {
-                scanner.next(); //vide le scanner de la saisie erronnée
+                scanner.next(); // empty scanner if not an integer
             }
 
             if (choice < 1 || choice > choices.length) {
@@ -28,5 +28,24 @@ public class InputMenu {
         }
 
         return choice;
+    }
+
+    public static int getInputNumber(Scanner scanner, int min, int max) {
+        int number = min - 1;
+
+        do {
+            try {
+                number = scanner.nextInt();
+                if (number < min || number > max) {
+                    number = min - 1;
+                    System.out.println(String.format("Please, choose an option between %d and %d.", min, max));
+                }
+            } catch (InputMismatchException e) {
+                scanner.next(); // empty scanner if not an integer
+                number = min - 1;
+            }
+        } while (number == min - 1);
+
+        return number;
     }
 }

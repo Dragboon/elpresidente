@@ -6,6 +6,7 @@ import fr.esgi.config.HomepageConfig;
 import fr.esgi.exceptions.GameOutputNotFound;
 import fr.esgi.exceptions.SeasonDisplayNotFound;
 import fr.esgi.exceptions.SeasonFileException;
+import fr.esgi.exceptions.YearlyEventNotFound;
 import fr.esgi.game.Play;
 import fr.esgi.readers.HomepageReader;
 
@@ -55,7 +56,7 @@ public class Homepage extends InputMenu {
                     // leaderboard
                     break;
             }
-        } catch (SeasonFileException | SeasonDisplayNotFound | GameOutputNotFound e) {
+        } catch (SeasonFileException | SeasonDisplayNotFound | GameOutputNotFound | YearlyEventNotFound e) {
             System.out.println(e.getMessage());
         }
 
