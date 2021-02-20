@@ -1,0 +1,12 @@
+{
+  "events": {
+    "coup_d_etat": {
+      "title": "COUP D'ÉTAT",
+      "description": "The communist faction attempts to take the lead of your country !",
+      "propositions": {
+        "1": "Send the army. | Effects : Capitalist +10%, Loyalist +20%, Militarist -10%, Communist -20% & -20% partisans",
+        "2": "Negotiate. | Effects : Capitalist -10%, Loyalist -20%, Communist +40%, Nationalist +10%, -200$"
+      }
+    }
+  }
+}

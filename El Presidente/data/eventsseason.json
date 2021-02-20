@@ -1,0 +1,14 @@
+{
+  "winter" : {
+    "1" : "coup_d_etat"
+  },
+  "spring" : {
+    "1" : "coup_d_etat"
+  },
+  "summer" : {
+    "1" : "coup_d_etat"
+  },
+  "autumn" : {
+    "1" : "coup_d_etat"
+  }
+}

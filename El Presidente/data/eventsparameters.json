@@ -1,0 +1,22 @@
+{
+  "parameters" : {
+    "coup_d_etat" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["10", "-20", "0", "0", "-10", "0", "20"],
+        "factionsPopulation" : ["0", "-20", "0", "0", "0", "0", "0"]
+      },
+      {
+        "money" : "-200",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-10", "40", "0", "0", "0", "10", "-20"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"]
+      }
+    ]
+  }
+}
