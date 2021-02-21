@@ -15,7 +15,7 @@
     "foodPrice" : "Each food unit cost %d."
   },
   "factionsCorruption" : {
-    "globalSatisfaction" : "Overall factions devotion : ",
+    "globalSatisfaction" : "Overall factions devotion : %.1f %%",
     "populationSize" : "Population size : ",
     "actualMoney" : "Your actual money : ",
     "population" : "%-15s| Population | Satisfaction |",
@@ -24,6 +24,7 @@
     "notEnoughMoney" : "You don't have enough money.",
     "corruptionSuccess" : "You successfully corrupted ",
     "factionChoice" : "Choose a faction to corrupt :",
+    "noDevotion" : "This faction doesn't believe in you anymore ! You cannot corrupt them.",
     "doneMenu" : "Done"
   },
   "factionsName" : {

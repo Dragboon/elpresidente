@@ -1,11 +1,9 @@
 package fr.esgi.game;
 
-import fr.esgi.config.GameOutputConfig;
-import fr.esgi.exceptions.GameOutputNotFound;
-import fr.esgi.exceptions.SeasonDisplayNotFound;
-import fr.esgi.exceptions.SeasonFileException;
-import fr.esgi.exceptions.YearlyEventNotFound;
+import fr.esgi.jsonconfig.GameOutputConfig;
+import fr.esgi.exceptions.*;
 import fr.esgi.factions.Factions;
+import fr.esgi.menu.EventsMenu;
 import fr.esgi.menu.YearlyEventMenu;
 import fr.esgi.readers.GameOutputReader;
 
@@ -19,54 +17,52 @@ public class Play {
     private int food;
     private int money;
 
-    private Season season = new Season();
-    private Island island = new Island();
-    private Score playerScore = new Score("Lolitler");
-    private GameOutputReader gameOutputReader = new GameOutputReader();
+    private final Island island = new Island();
+    private Score playerScore;
+    private final GameOutputReader gameOutputReader = new GameOutputReader();
     private GameOutputConfig gameOutputConfig;
-    private Factions factions = new Factions();
-    private YearlyEvent yearlyEvents = new YearlyEvent();
-    private YearlyEventMenu yearlyEventMenu = new YearlyEventMenu();
-    private final static String ARRAYFORMAT = "%-15s | %-6s | %-5s |";
+    private final Factions factions = new Factions();
+    private final YearlyEvent yearlyEvents = new YearlyEvent();
+    private final YearlyEventMenu yearlyEventMenu = new YearlyEventMenu();
+    private final EventsMenu eventsMenu = new EventsMenu();
+    private final static String ARRAYFORMAT = "%-15s| %-6s | %-5s |";
 
-    public void startGame(Scanner scanner) throws SeasonFileException, SeasonDisplayNotFound, GameOutputNotFound, YearlyEventNotFound {
+    public void startGame(Scanner scanner, String username) {
+
+        playerScore = new Score(username);
 
         try {
             gameOutputConfig = gameOutputReader.getOutput();
         } catch (IOException e) {
-            throw new GameOutputNotFound("Game output file not found.");
+            System.out.println(e.getMessage());
+            return;
         }
 
-        while (factions.globalPopulation() >= 0 && factions.globalSatisfaction() >= 30) {
-
+        while (factions.globalPopulation() >= 0 && factions.globalSatisfaction() >= 45) {
             try {
                 if (nbRounds % 4 == 0 && nbRounds != 0) {
                     printYearlyEvent(scanner);
                 }
-            } catch (IOException e) {
-                throw new YearlyEventNotFound("Yearly event file not found.");
-            }
+                eventsMenu.eventManager(scanner, nbRounds, this);
 
-            try {
-                season.getSeason("basic", nbRounds);
-                printIslandStats();
-            } catch (IOException e) {
-                throw new SeasonFileException("Season file not found.");
-            } catch (SeasonDisplayNotFound e) {
-                throw new SeasonDisplayNotFound("Season display not found.");
+            } catch (YearlyEventNotFound | EventsSeasonNotFound | EventsParametersNotFound | EventsDisplayNotFound | SeasonFileNotFound e) {
+                System.out.println(e.getMessage());
             }
             nbRounds++;
         }
+        System.out.println("\n" + gameOutputConfig.getGameOver());
+        System.out.println("\n" + gameOutputConfig.getScore() + playerScore.getScore() + "\n\n");
+        GamePause.pauseGame(gameOutputConfig.getGamePause(), scanner);
     }
 
-    private void printYearlyEvent(Scanner scanner) throws IOException {
+    private void printYearlyEvent(Scanner scanner) throws YearlyEventNotFound {
 
         int foodBis;
         nbYears++;
         food += island.yearlyHarvest();
         money += island.yearlyTaxes();
         playerScore.setScore(this);
-        System.out.println(gameOutputConfig.getNewYearScore() + playerScore.getScore());
+        System.out.println("\n\n" + gameOutputConfig.getNewYearScore() + (int) playerScore.getScore());
         System.out.println(gameOutputConfig.getYearlyHarvest() + island.yearlyHarvest());
         System.out.println(gameOutputConfig.getYearlyTaxes() + island.yearlyTaxes() + "\n\n");
         yearlyEventMenu.printMenu(scanner, this);
@@ -74,30 +70,25 @@ public class Play {
         foodBis = yearlyEvents.foodLeft(getFood(), getFactions());
         if (foodBis >= 0) {
             food = yearlyEvents.foodLeft(getFood(), getFactions());
-            displayNewPopulation(true);
+            displayNewPopulation(true, scanner);
         } else {
-            displayNewPopulation(false);
+            displayNewPopulation(false, scanner);
             food = 0;
         }
     }
 
-    private void printIslandStats() {
-        System.out.println(gameOutputConfig.getFood() + food);
-        System.out.println(gameOutputConfig.getMoney() + money);
-        System.out.println(gameOutputConfig.getIslandIndus() + island.getIndusLevel());
-        System.out.println(gameOutputConfig.getIslandFarm() + island.getFarmLevel() + "\n\n");
-    }
-
-    private void displayNewPopulation(boolean growth) {
+    private void displayNewPopulation(boolean growth, Scanner scanner) {
         int[] populationGrowth;
         int[] totalPopulation;
         int birthsCounter = 0;
         String[] factionsName = gameOutputConfig.getFactionsName();
 
         if (growth) {
+            System.out.println("\n\n" + gameOutputConfig.getBirthEvent());
             populationGrowth = yearlyEvents.factionBirth(this);
             System.out.println("\n" + String.format(gameOutputConfig.getBirthDisplay(), " "));
         } else {
+            System.out.println("\n\n" + gameOutputConfig.getDeathEvent());
             populationGrowth = yearlyEvents.starvationDeath(this);
             System.out.println("\n" + String.format(gameOutputConfig.getDeathDisplay()," "));
         }
@@ -107,37 +98,30 @@ public class Play {
             birthsCounter += populationGrowth[i];
             System.out.println(String.format(ARRAYFORMAT,
                     factionsName[i],
-                    String.valueOf(populationGrowth[i]),
-                    String.valueOf(totalPopulation[i])));
+                    populationGrowth[i],
+                    totalPopulation[i]));
         }
         System.out.println(String.format(ARRAYFORMAT,
                 "Total",
                 birthsCounter,
-                String.valueOf(factions.globalPopulation())));
+                factions.globalPopulation()));
         System.out.println("\n");
+        GamePause.pauseGame(gameOutputConfig.getGamePause(), scanner);
     }
 
-    public void setFood(int food) {
-        this.food = food;
-    }
+    public void setFood(int food) { this.food = food; }
 
-    public void setMoney(int money) {
-        this.money = money;
-    }
+    public void setMoney(int money) { this.money = money; }
 
-    public int getFood() {
-        return food;
-    }
+    public int getFood() { return food; }
 
-    public int getMoney() {
-        return money;
-    }
+    public int getMoney() { return money; }
 
-    public Factions getFactions() {
-        return factions;
-    }
+    public Factions getFactions() { return factions; }
 
-    public int getNbYears() {
-        return nbYears;
-    }
+    public int getNbYears() { return nbYears; }
+
+    public Island getIsland() { return island; }
+
+    public GameOutputConfig getGameOutputConfig() { return gameOutputConfig; }
 }

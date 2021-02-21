@@ -3,10 +3,131 @@
     "coup_d_etat": {
       "title": "COUP D'ÉTAT",
       "description": "The communist faction attempts to take the lead of your country !",
-      "propositions": {
-        "1": "Send the army. | Effects : Capitalist +10%, Loyalist +20%, Militarist -10%, Communist -20% & -20% partisans",
-        "2": "Negotiate. | Effects : Capitalist -10%, Loyalist -20%, Communist +40%, Nationalist +10%, -200$"
-      }
+      "propositions": [
+        "Send the army. | Effects : Capitalist +10%, Loyalist +20%, Militarist -10%, Communist -20% & -20% partisans",
+        "Negotiate. | Effects : Capitalist -10%, Loyalist -20%, Communist +40%, Nationalist +10%, money -200$"
+      ]
+    },
+    "flooding": {
+      "title": "Flooding",
+      "description": "Heavy rain batters your country, rivers and conduits are rising up. Your country is flooded !",
+      "propositions": [
+        "Do nothing. | Effects : Communists -10%, Liberals -10%, Church -10%, Militarists -10%, Nationalists -10%, Loyalists -10%",
+        "Help your population. | Effects : Capitalist -5%, Liberals +10%, Loyalist +10%, Communist +5%, Nationalist +5%, Church +10%, money -200$"
+      ]
+    },
+    "drought": {
+      "title": "Drought",
+      "description": "Due to drought, this season can't product any food !",
+      "propositions": [
+        "Do nothing | Effects : Capitalists -5% other factions -10%, global population -5%",
+        "Feed your population. | Effects : Capitalist -5%, Loyalist +10%, Communist +10%, Nationalist +5%, Church +10%, food -100"
+      ]
+    },
+    "goldMineFound": {
+      "title": "Gold mine found !",
+      "description": "Your people found a gold mine.",
+      "propositions": [
+        "Exploit ressources. | Effects : Capitalists 20%, industry level +10, money +50$",
+        "Create farm around instead. | Effects : Communists +10%, Church +5%, farm level +10"
+      ]
+    },
+    "churchCelebration": {
+      "title": "Church Celebration",
+      "description": "The Church faction want to celebrate a saint",
+      "propositions": [
+        "Help to organize. | Effects : Capitalists -5%, Church +20%, Nationalists +7%, food -50, money -50$",
+        "Do nothing. | Effects : Capitalist +5%, Church -10%"
+      ]
+    },
+    "islandLevelUp": {
+      "title": "Island upgrade",
+      "description": "You have some space on your island, what do you want to create ?",
+      "propositions": [
+        "Create farms. | Effects : Church +10%, Communists +10%, Liberals +10%, Loyalists +10%, farm +20%",
+        "Build industries. | Effects : Capitalists 10%, Militarists +10%, Nationalists +10%, Loyalists +10%, industry +20%"
+      ]
+    },
+    "buildSchool": {
+      "title": "Build School",
+      "description": "The liberal faction ask for more schools.",
+      "propositions": [
+        "Create schools. | Effects : Capitalists -5% , Liberals +15%, Militarists +5%, Nationalists +5%, industry +10%, money -50",
+        "Ignore them and create churches instead. | Effects : Capitalists -5%, Liberals -10%, Church +30%, money -20",
+        "Do nothing. | Effects : Capitalists +5%, Liberals -10%, Militarists +2%, Loyalists -3%"
+      ]
+    },
+    "fire": {
+      "title": "Fire",
+      "description": "Your country is on fire !",
+      "propositions": [
+        "Do nothing. | Effects : Global population -5%",
+        "Help your population. | Effects : Capitalist -5%, Communist +5%, Nationalist +5%, Church +10%, Loyalist +10%, money -100$"
+      ]
+    },
+    "receiveHelpCountry": {
+      "title": "Country Help",
+      "description": "A friendly country wants to give you a hand.",
+      "propositions": [
+        "Accept. | Effects : Capitalists 20%, Loyalists -25%, money +500$",
+        "Decline. | Effects : Capitalist -15%, Loyalist +30%"
+      ]
+    },
+    "openFactory": {
+      "title": "Build factories",
+      "description": "The militarist faction want to build factories",
+      "propositions": [
+        "Accept proposition. | Effects : Capitalists +5% , Church -10%, Militarists +10%, Loyalists +5%, industry level +10%, money -50$",
+        "Ignore proposition. | Effects : Liberals +10%, Church +10%, Militarists -10%, Loyalists -5%"
+      ]
+    },
+    "niceHarvest": {
+      "title": "Good harvests",
+      "description": "The sun is bright and the rains are abundant, your crops are rich.",
+      "propositions": [
+        "Harvest. | Effect : Global satisfaction +1%, food +200"
+      ]
+    },
+    "coldWinter": {
+      "title": "Cold winter",
+      "description": "Your population is freezing and struggle to warm up !",
+      "propositions": [
+        "Do nothing. | Effects : Communists -10%, Liberals -10%, Church -10%, Loyalists -10%",
+        "Build house. | Effects : Communist +5%, Church +10%, industry level +5% ,money -200$"
+      ]
+    },
+    "openFrontier": {
+      "title": "Open your frontier",
+      "description": "Liberals wants to open the frontiers",
+      "propositions": [
+        "Accept the proposition. | Effects : Liberals +30%, Militarists -20%, Nationalists -10%",
+        "Declines. | Effects : Liberals -10%, Loyalist +10%, Nationalists +10%"
+      ]
+    },
+    "freedomOfThePress": {
+      "title": "Freedom of the press",
+      "description": "Liberals want the liberty of press !",
+      "propositions": [
+        "Accept the propositions. | Effects : Communists +5%, Liberals +20%, Church -10%, Militarists -10%, Nationalists -10%, Loyalists +10%",
+        "Refuse. | Effects : Liberals -15%, Militarists +10%, Nationalists +10%, Loyalists -10%"
+      ]
+    },
+    "terroristAttack": {
+      "title": "Terrorist Attack",
+      "description": "Your country is attacked by terrorists !",
+      "propositions": [
+        "Reinforce intern securities. | Effects : Capitalists +10%, Liberals +10%, Militarists +10%, money -300$",
+        "Wait and see. | Effects : Global population -5%, Militarists -20%",
+        "Negotiate with the terrorists | Effects : Liberals +10%, Militarists -10%, Nationalists -10%, Loyalists -10%"
+      ]
+    },
+    "nationalFeast": {
+      "title": "National feast",
+      "description": "A national feast to your mighty person",
+      "propositions": [
+        "Create the event. | Effects : global satisfaction +15%, food -200, money -200$",
+        "Forget it. | Effects : loyalist -10%"
+      ]
     }
   }
 }

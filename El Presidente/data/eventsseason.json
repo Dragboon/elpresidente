@@ -1,14 +1,8 @@
 {
-  "winter" : {
-    "1" : "coup_d_etat"
-  },
-  "spring" : {
-    "1" : "coup_d_etat"
-  },
-  "summer" : {
-    "1" : "coup_d_etat"
-  },
-  "autumn" : {
-    "1" : "coup_d_etat"
+  "season": {
+    "spring" : ["coup_d_etat","flooding","drought","goldMineFound","churchCelebration","islandLevelUp","buildSchool","fire","receiveHelpCountry","openFactory","openFrontier","freedomOfThePress","terroristAttack","nationalFeast"],
+    "summer" : ["coup_d_etat","flooding","drought","goldMineFound","churchCelebration","islandLevelUp","buildSchool","fire","receiveHelpCountry","openFactory","niceHarvest","openFrontier","freedomOfThePress","terroristAttack","nationalFeast"],
+    "autumn" : ["coup_d_etat","flooding","goldMineFound","churchCelebration","islandLevelUp","buildSchool","fire","receiveHelpCountry","openFactory","niceHarvest","openFrontier","freedomOfThePress","terroristAttack","nationalFeast"],
+    "winter" : ["coup_d_etat","goldMineFound","churchCelebration","islandLevelUp","buildSchool","fire","receiveHelpCountry","openFactory","coldWinter","openFrontier","freedomOfThePress","terroristAttack","nationalFeast"]
   }
 }

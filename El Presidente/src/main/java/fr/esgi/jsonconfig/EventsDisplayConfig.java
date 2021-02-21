@@ -1,6 +1,6 @@
-package fr.esgi.config;
+package fr.esgi.jsonconfig;
 
-import fr.esgi.game.EventsDisplay;
+import fr.esgi.events.EventsDisplay;
 
 import java.util.Map;
 

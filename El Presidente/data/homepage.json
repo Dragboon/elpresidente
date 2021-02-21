@@ -43,5 +43,6 @@
 		"easy" : ["100", "5"],
 		"medium" : ["50", "10"],
 		"hard" : ["20", "30"]
-	}
+	},
+	"username" : "Please enter your dictator name : "
 }

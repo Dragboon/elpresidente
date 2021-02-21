@@ -6,8 +6,15 @@
   "money" : "Current money : ",
   "islandIndus" : "Island's industries part : ",
   "islandFarm" : "Island's farms part : ",
-  "deathDisplay" : "%-15s | R.I.P. | Total |",
-  "birthDisplay" : "%-15s | Births | Total |",
+  "deathEvent" : "Your population died of starvation : ",
+  "birthEvent" : "Your population gave birth : ",
+  "deathDisplay" : "%-15s| R.I.P. | Total |",
+  "birthDisplay" : "%-15s| Births | Total |",
+  "total" : "Total          | %-10s | %-12s |",
+  "factionsStatDisplay" : "%-15s| Population | Satisfaction |",
+  "choiceNotValid" : "You cannot take this choice.",
+  "gamePause" : "Enter a key to continue...",
+  "score" : "Your score : ",
   "factionsName" : {
     "1" : "Capitalists",
     "2" : "Communists",
@@ -16,5 +23,12 @@
     "5" : "Militarists",
     "6" : "Nationalists",
     "7" : "Loyalists"
-  }
+  },
+  "gameOver" : " _______  _______  __   __  _______    _______  __   __  _______  ______   
+|       ||   _   ||  |_|  ||       |  |       ||  | |  ||       ||    _ |  
+|    ___||  |_|  ||       ||    ___|  |   _   ||  |_|  ||    ___||   | ||  
+|   | __ |       ||       ||   |___   |  | |  ||       ||   |___ |   |_||_ 
+|   ||  ||       ||       ||    ___|  |  |_|  ||       ||    ___||    __  |
+|   |_| ||   _   || ||_|| ||   |___   |       | |     | |   |___ |   |  | |
+|_______||__| |__||_|   |_||_______|  |_______|  |___|  |_______||___|  |_|"
 }

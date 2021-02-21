@@ -26,12 +26,23 @@ public class Island {
     }
 
     public void setFarmLevel(int farmLevel) {
-        this.farmLevel = farmLevel;
+        if (farmLevel + indusLevel <= 100 && farmLevel >= 0) {
+            this.farmLevel = farmLevel;
+        } else if (farmLevel < 0) {
+            this.farmLevel = 0;
+        } else {
+            this.farmLevel = 100 - indusLevel;
+        }
     }
 
     public void setIndusLevel(int indusLevel) {
-        this.indusLevel = indusLevel;
+        if (indusLevel + farmLevel <= 100 && indusLevel >= 0) {
+            this.indusLevel = indusLevel;
+        } else if (indusLevel < 0) {
+            this.indusLevel = 0;
+        } else {
+            this.indusLevel = 100 - farmLevel;
+        }
     }
-
 
 }

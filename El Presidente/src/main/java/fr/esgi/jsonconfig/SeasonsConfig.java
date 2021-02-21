@@ -1,6 +1,4 @@
-package fr.esgi.config;
-
-import fr.esgi.exceptions.SeasonDisplayNotFound;
+package fr.esgi.jsonconfig;
 
 import java.util.Map;
 
@@ -11,11 +9,7 @@ public class SeasonsConfig {
     private Map<String, String> autumn;
     private Map<String, String> winter;
 
-    public Map<String, String> getSpring() {
-        return spring;
-    }
-
-    public String print(String event, int season) throws SeasonDisplayNotFound {
+    public String print(String event, int season) {
 
         switch (season) {
             case 0 :
@@ -24,11 +18,10 @@ public class SeasonsConfig {
                 return summer.get(event);
             case 2 :
                 return autumn.get(event);
-            case 3 :
+            default :
                 return winter.get(event);
         }
 
-        throw new SeasonDisplayNotFound("Season display not found.");
     }
 
 }
