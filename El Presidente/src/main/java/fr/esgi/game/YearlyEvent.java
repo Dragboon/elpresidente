@@ -72,6 +72,10 @@ public class YearlyEvent {
         int[] factionsPartisans = play.getFactions().getPopulation();
         double[] factionSatisfaction = play.getFactions().getSatisfaction();
 
+        if (factionSatisfaction[factionIndex] == 0) {
+            return false;
+        }
+
         if (play.getMoney() < factionsPartisans[factionIndex] * 15) {
             return false;
         }

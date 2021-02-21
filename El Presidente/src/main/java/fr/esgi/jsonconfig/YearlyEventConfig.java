@@ -1,4 +1,4 @@
-package fr.esgi.config;
+package fr.esgi.jsonconfig;
 
 import java.util.Map;
 

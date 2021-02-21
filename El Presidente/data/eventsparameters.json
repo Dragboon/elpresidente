@@ -1,0 +1,333 @@
+{
+  "parameters" : {
+    "coup_d_etat" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["10", "-20", "0", "0", "-10", "0", "20"],
+        "factionsPopulation" : ["0", "-20", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "-200",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-10", "40", "0", "0", "0", "10", "-20"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "flooding" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "-10", "-10", "-10", "-10", "-10", "-10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "-200",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "10", "10", "5", "5", "10", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "drought" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "-10", "-10", "-10", "-10", "-10", "-10"],
+        "factionsPopulation" : ["-5", "-5", "-5", "-5", "-5", "-5", "-5"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "-100",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "10", "0", "10", "0", "5", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "goldMineFound" : [
+      {
+        "money" : "50",
+        "food" : "0",
+        "industry" : "10",
+        "farm" : "0",
+        "factionsSatisfaction" : ["20", "0", "0", "0", "0", "0", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "10",
+        "factionsSatisfaction" : ["0", "10", "0", "5", "0", "0", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "churchCelebration" : [
+      {
+        "money" : "-50",
+        "food" : "-50",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "0", "0", "20", "0", "7", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["5", "0", "0", "-10", "0", "0", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "islandLevelUp" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "20",
+        "factionsSatisfaction" : ["0", "10", "10", "10", "0", "0", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "20",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "10", "0", "0", "10", "10", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "buildSchool" : [
+      {
+        "money" : "-50",
+        "food" : "0",
+        "industry" : "10",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "0", "15", "0", "5", "5", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "-20",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "0", "-10", "30", "0", "0", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["5", "0", "-10", "0", "2", "0", "-3"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "fire" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "0", "0", "0", "0", "0"],
+        "factionsPopulation" : ["-5", "-5", "-5", "-5", "-5", "-5", "-5"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "-100",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-5", "5", "0", "5", "0", "5", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "receiveHelpCountry" : [
+      {
+        "money" : "500",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["20", "0", "0", "0", "0", "0", "-25"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["-15", "0", "0", "0", "0", "0", "30"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "openFactory" : [
+      {
+        "money" : "-50",
+        "food" : "0",
+        "industry" : "10",
+        "farm" : "0",
+        "factionsSatisfaction" : ["5", "0", "0", "10", "10", "0", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "10", "10", "-10", "0", "-5"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "niceHarvest" : [
+      {
+        "money" : "0",
+        "food" : "200",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["1", "1", "1", "1", "1", "1", "1"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : true
+      }
+    ],
+    "coldWinter" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "-10", "-10", "-10", "0", "0", "-10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "-200",
+        "food" : "0",
+        "industry" : "5",
+        "farm" : "0",
+        "factionsSatisfaction" : ["5", "0", "0", "10", "0", "0", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "openFrontier" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "30", "0", "-20", "-10", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "-10", "0", "10", "0", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "freedomOfThePress" : [
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "5", "20", "-10", "-10", "-10", "10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "-15", "0", "10", "10", "-10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "terroristAttack" : [
+      {
+        "money" : "-300",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["10", "0", "10", "0", "10", "0", "0"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "0", "0", "-20", "0", "0"],
+        "factionsPopulation" : ["-5", "-5", "-5", "-5", "-5", "-5", "-5"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "10", "0", "-10", "-10", "-10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ],
+    "nationalFeast" : [
+      {
+        "money" : "-200",
+        "food" : "-200",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["15", "15", "15", "15", "15", "15", "15"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      },
+      {
+        "money" : "0",
+        "food" : "0",
+        "industry" : "0",
+        "farm" : "0",
+        "factionsSatisfaction" : ["0", "0", "0", "0", "0", "0", "-10"],
+        "factionsPopulation" : ["0", "0", "0", "0", "0", "0", "0"],
+        "isMandatory" : false
+      }
+    ]
+  }
+}

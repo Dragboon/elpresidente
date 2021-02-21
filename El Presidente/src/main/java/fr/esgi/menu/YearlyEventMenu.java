@@ -1,7 +1,8 @@
 package fr.esgi.menu;
 
+import fr.esgi.exceptions.YearlyEventNotFound;
 import fr.esgi.factions.Factions;
-import fr.esgi.config.YearlyEventConfig;
+import fr.esgi.jsonconfig.YearlyEventConfig;
 import fr.esgi.game.Play;
 import fr.esgi.game.YearlyEvent;
 import fr.esgi.readers.YearlyEventReader;
@@ -18,9 +19,13 @@ public class YearlyEventMenu {
     private final static int FOODPRICE = 8;
     private final static String ARRAYFORMAT = "%-15s| %-10s | %-12s |";
 
-    public void printMenu(Scanner scanner, Play play) throws IOException {
+    public void printMenu(Scanner scanner, Play play) throws YearlyEventNotFound {
 
-        yearlyEventConfig = yearlyEventReader.getYearlyEvent();
+        try {
+            yearlyEventConfig = yearlyEventReader.getYearlyEvent();
+        } catch (IOException e) {
+            throw new YearlyEventNotFound();
+        }
         yearlyEvent = new YearlyEvent();
 
         int choice;
@@ -82,7 +87,7 @@ public class YearlyEventMenu {
         System.out.println(factionsCorruption.get("warningCorruption") + "\n");
 
         do {
-            System.out.println(factionsCorruption.get("globalSatisfaction") + factions.globalSatisfaction());
+            System.out.println(String.format(factionsCorruption.get("globalSatisfaction"), factions.globalSatisfaction()));
             System.out.println(factionsCorruption.get("populationSize") + factions.globalPopulation());
             System.out.println(factionsCorruption.get("actualMoney") + play.getMoney() + "\n");
             System.out.println(String.format(factionsCorruption.get("population"), " "));
@@ -101,6 +106,9 @@ public class YearlyEventMenu {
             isPurchaseSuccessful = yearlyEvent.hasEnoughMoneyToCorrupt(choice - 1, play);
             if(isPurchaseSuccessful) {
                 System.out.println("\n" + factionsCorruption.get("corruptionSuccess") + factionsName[choice - 1] + "\n\n");
+                return;
+            } else if (factionsSatisfaction[choice - 1] == 0) {
+                System.out.println(factionsCorruption.get("\nnoDevotion\n"));
                 return;
             }
             System.out.println(factionsCorruption.get("notEnoughMoney"));

@@ -1,12 +1,7 @@
 package fr.esgi.menu;
 
-import com.google.gson.Gson;
-import fr.esgi.config.ErrorsHandler;
-import fr.esgi.config.HomepageConfig;
-import fr.esgi.exceptions.GameOutputNotFound;
-import fr.esgi.exceptions.SeasonDisplayNotFound;
-import fr.esgi.exceptions.SeasonFileException;
-import fr.esgi.exceptions.YearlyEventNotFound;
+import fr.esgi.game.Score;
+import fr.esgi.jsonconfig.HomepageConfig;
 import fr.esgi.game.Play;
 import fr.esgi.readers.HomepageReader;
 
@@ -15,16 +10,18 @@ import java.util.Scanner;
 
 public class Homepage extends InputMenu {
 
+    HomepageConfig homepageConfig;
+
+
     public void printMenu(Scanner scanner) {
 
         HomepageReader homepageReader = new HomepageReader();
-        HomepageConfig homepageConfig;
         int choice;
 
         try {
             homepageConfig = homepageReader.getMenu();
         } catch (IOException e) {
-            System.out.println("Le fichier du menu n'existe pas.");
+            System.out.println("Homepage file not found.");
             return;
         }
 
@@ -39,27 +36,25 @@ public class Homepage extends InputMenu {
 
     public void menu(Scanner scanner, int choice) {
 
+        String username;
+
         Play game = new Play();
+        switch (choice) {
+            case 1:
+                System.out.println("\n\n" + homepageConfig.getUsername());
+                username = scanner.next();
+                game.startGame(scanner, username);
+                break;
+            case 2:
 
-        try {
-            switch (choice) {
-                case 1 :
-                    game.startGame(scanner);
-                    break;
-                case 2 :
-                    // méthode difficulté
-                    break;
-                case 3 :
-                    // sandbox
-                    break;
-                case 4 :
-                    // leaderboard
-                    break;
-            }
-        } catch (SeasonFileException | SeasonDisplayNotFound | GameOutputNotFound | YearlyEventNotFound e) {
-            System.out.println(e.getMessage());
+                break;
+            case 3:
+
+                break;
+            case 4:
+                System.out.println("\n\n" + Score.getLeaderboard());
+                break;
         }
-
     }
 
 }

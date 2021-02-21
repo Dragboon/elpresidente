@@ -1,7 +1,7 @@
 package fr.esgi.game;
 
-import fr.esgi.config.SeasonsConfig;
-import fr.esgi.exceptions.SeasonDisplayNotFound;
+import fr.esgi.jsonconfig.SeasonsConfig;
+import fr.esgi.exceptions.SeasonFileNotFound;
 import fr.esgi.readers.SeasonsReader;
 
 import java.io.IOException;
@@ -12,16 +12,22 @@ public class Season {
     private SeasonsReader seasonsReader = new SeasonsReader();
 
 
-    public void getSeason(String event, int round) throws IOException, SeasonDisplayNotFound {
+    public void getSeason(String event, int round) throws SeasonFileNotFound {
 
-        seasons = seasonsReader.getSeasons();
+        try {
+            seasons = seasonsReader.getSeasons();
+        } catch (IOException e) {
+            throw new SeasonFileNotFound();
+        }
         String seasonDisplay;
 
-        System.out.println("Year " + (int) (round / 4) + " - " + seasons.print("base", round % 4));
+        System.out.println("\n\nYear " + (int) (round / 4) + " - " + seasons.print("base", round % 4));
         if (!event.equals("base")) {
             seasonDisplay = seasons.print(event, round % 4);
             if (seasonDisplay != null) {
                 System.out.println(seasonDisplay);
+            } else {
+                System.out.println(seasons.print("basic", round % 4));
             }
 
         }

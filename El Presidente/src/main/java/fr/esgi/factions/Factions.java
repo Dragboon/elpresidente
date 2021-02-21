@@ -40,33 +40,33 @@ public class Factions {
     }
 
     public void setSatisfaction(double[] factionSatisfaction) {
-        capitalistSatisfaction = factionSatisfaction[0];
-        communistSatisfaction = factionSatisfaction[1];
-        liberalsSatisfaction = factionSatisfaction[2];
-        churchSatisfaction = factionSatisfaction[3];
-        militaristSatisfaction = factionSatisfaction[4];
-        nationalistSatisfaction = factionSatisfaction[5];
-        loyalistSatisfaction = factionSatisfaction[6];
+        capitalistSatisfaction = Math.min(Math.max(factionSatisfaction[0], 0), 100);
+        communistSatisfaction = Math.min(Math.max(factionSatisfaction[1], 0),100);
+        liberalsSatisfaction = Math.min(Math.max(factionSatisfaction[2], 0),100);
+        churchSatisfaction = Math.min(Math.max(factionSatisfaction[3], 0),100);
+        militaristSatisfaction = Math.min(Math.max(factionSatisfaction[4], 0),100);
+        nationalistSatisfaction = Math.min(Math.max(factionSatisfaction[5], 0),100);
+        loyalistSatisfaction = Math.min(Math.max(factionSatisfaction[6], 0),100);
     }
 
     public void setGlobalSatisfaction(double globalSatisfaction) {
-        capitalistSatisfaction += globalSatisfaction;
-        communistSatisfaction += globalSatisfaction;
-        liberalsSatisfaction += globalSatisfaction;
-        churchSatisfaction += globalSatisfaction;
-        militaristSatisfaction += globalSatisfaction;
-        nationalistSatisfaction += globalSatisfaction;
-        loyalistSatisfaction += globalSatisfaction;
+        capitalistSatisfaction = Math.max(capitalistSatisfaction + globalSatisfaction, 0);
+        communistSatisfaction += Math.max(communistSatisfaction + globalSatisfaction, 0);
+        liberalsSatisfaction += Math.max(liberalsSatisfaction + globalSatisfaction, 0);
+        churchSatisfaction += Math.max(churchSatisfaction + globalSatisfaction, 0);
+        militaristSatisfaction += Math.max(militaristSatisfaction + globalSatisfaction, 0);
+        nationalistSatisfaction += Math.max(nationalistSatisfaction + globalSatisfaction, 0);
+        loyalistSatisfaction += Math.max(loyalistSatisfaction + globalSatisfaction, 0);
     }
 
     public void setPopulation(int[] newPopulation) {
-        capitalistPopulation = newPopulation[0];
-        communistPopulation = newPopulation[1];
-        liberalsPopulation = newPopulation[2];
-        churchPopulation = newPopulation[3];
-        militaristPopulation = newPopulation[4];
-        nationalistPopulation = newPopulation[5];
-        loyalistPopulation = newPopulation[6];
+        capitalistPopulation = Math.max(newPopulation[0], 0);
+        communistPopulation = Math.max(newPopulation[1], 0);
+        liberalsPopulation = Math.max(newPopulation[2], 0);
+        churchPopulation = Math.max(newPopulation[3], 0);
+        militaristPopulation = Math.max(newPopulation[4], 0);
+        nationalistPopulation = Math.max(newPopulation[5], 0);
+        loyalistPopulation = Math.max(newPopulation[6], 0);
     }
 
     public int[] getPopulation() {

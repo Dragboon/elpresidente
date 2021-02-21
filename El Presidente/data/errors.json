@@ -1,6 +1,11 @@
 {
 	"errors" : {
-		"wrong_input" : "You entered a wrong input. Please try again.",
-		"error" : ""
+		"eventsDisplayNotFound" : "Events display file not found.",
+		"eventsParametersNotFound" : "Events parameters file not found.",
+		"eventsSeasonNotFound" : "Events season file not found.",
+		"gameOutputNotFound" : "Game output file not found.",
+		"seasonFileNotFound" : "Seasons file not found.",
+		"yearlyEventNotFound" : "Yearly event file not found.",
+		"leaderboardNotFound" : "Leaderboard file not found."
 	}
 }

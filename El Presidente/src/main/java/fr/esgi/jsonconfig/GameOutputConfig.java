@@ -1,4 +1,4 @@
-package fr.esgi.config;
+package fr.esgi.jsonconfig;
 
 import java.util.Map;
 
@@ -11,9 +11,17 @@ public class GameOutputConfig {
     private String money;
     private String islandIndus;
     private String islandFarm;
+    private String deathEvent;
+    private String birthEvent;
     private String deathDisplay;
     private String birthDisplay;
+    private String factionsStatDisplay;
+    private String choiceNotValid;
+    private String gamePause;
+    private String score;
+    private String total;
     private Map<Integer, String> factionsName;
+    private String gameOver;
 
     public String getNewYearScore() {
         return newYearScore;
@@ -43,6 +51,14 @@ public class GameOutputConfig {
         return islandFarm;
     }
 
+    public String getDeathEvent() {
+        return deathEvent;
+    }
+
+    public String getBirthEvent() {
+        return birthEvent;
+    }
+
     public String getDeathDisplay() {
         return deathDisplay;
     }
@@ -51,7 +67,31 @@ public class GameOutputConfig {
         return birthDisplay;
     }
 
+    public String getFactionsStatDisplay() {
+        return factionsStatDisplay;
+    }
+
+    public String getChoiceNotValid() {
+        return choiceNotValid;
+    }
+
+    public String getGamePause() {
+        return gamePause;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
     public String[] getFactionsName() {
         return factionsName.values().toArray(new String[0]);
+    }
+
+    public String getGameOver() {
+        return gameOver;
     }
 }
